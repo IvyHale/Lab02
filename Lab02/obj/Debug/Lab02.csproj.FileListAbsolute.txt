@@ -1,0 +1,15 @@
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\bin\Debug\Lab02.exe.config
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\bin\Debug\Lab02.exe
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\bin\Debug\Lab02.pdb
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.csprojResolveAssemblyReference.cache
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\View\PersonEdit.g.cs
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\App.g.cs
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02_MarkupCompile.cache
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02_MarkupCompile.lref
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\View\PersonEdit.baml
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.g.resources
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.Properties.Resources.resources
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.csproj.GenerateResource.Cache
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.csproj.CoreCompileInputs.cache
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.exe
+D:\Mohyla\2 year\C#\Projects\Lab02\Lab02\obj\Debug\Lab02.pdb
