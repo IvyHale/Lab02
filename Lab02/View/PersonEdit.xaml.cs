@@ -1,5 +1,4 @@
-﻿
-using Lab02.ModelView;
+﻿using Lab02.ModelView;
 using System.Windows;
 
 namespace Lab02.View

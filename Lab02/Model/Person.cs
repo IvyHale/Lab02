@@ -2,56 +2,56 @@
 
 namespace Lab02.Model
 {
-    class Person
+    internal class Person
     {
-        private string _name, _surname, _email;
+        private readonly string _name;
+        private readonly string _surname;
+        private readonly string _email;
         private DateTime _birthDate;
 
-        public Person(string name, string surname, string email, DateTime birthDate)
+        internal Person(string name, string surname, string email, DateTime birthDate)
         {
-            this._name = name;
-            this._surname = surname;
-            this._email = email;
-            this._birthDate = birthDate;
+            _name = name;
+            _surname = surname;
+            _email = email;
+            _birthDate = birthDate;
         }
 
-        public Person(string name, string surname, string email)
+        internal Person(string name, string surname, string email)
         {
-            this._name = name;
-            this._surname = surname;
-            this._email = email;
+            _name = name;
+            _surname = surname;
+            _email = email;
         }
 
-        public Person(string name, string surname, DateTime birthDate)
+        internal Person(string name, string surname, DateTime birthDate)
         {
-            this._name = name;
-            this._surname = surname;
-            this._birthDate = birthDate;
+            _name = name;
+            _surname = surname;
+            _birthDate = birthDate;
         }
 
-        public string Name
+        internal string Name
         {
             get { return _name;}
-            set { _name = value; }
         }
-        public string Surname
+
+        internal string Surname
         {
             get { return _surname; }
-            set { _surname = value; }
         }
-        public string Email
+
+        internal string Email
         {
             get { return _email; }
-            set { _email = value; }
         }
-        public DateTime BirthDate
+        internal DateTime BirthDate
         {
             get { return _birthDate; }
-            set { _birthDate = value; }
         }
 
         //власне можна використати readonly але цей запис рівносильний
-        public bool IsAdult
+        internal bool IsAdult
         {
             get
             {
@@ -63,85 +63,49 @@ namespace Lab02.Model
             }
         }
 
-        public string SunSign
+        internal string SunSign
         {
             get
             {
-                int month = this._birthDate.Month, day = this._birthDate.Day;
+                int month = _birthDate.Month, day = _birthDate.Day;
                 string sunSign="unknown";
                 switch (month)
                 {
                     case 1:
-                        if (day <= 20)
-                            sunSign = "Capricorn";
-                        else
-                            sunSign = "Aquarius";
+                        sunSign = day <= 20 ? "Capricorn" : "Aquarius";
                         break;
                     case 2:
-                        if (day <= 19)
-                            sunSign = "Aquarius";
-                        else
-                            sunSign = "Pisces";
+                        sunSign = day <= 19 ? "Aquarius" : "Pisces";
                         break;
                     case 3:
-                        if (day <= 20)
-                            sunSign = "Pisces";
-                        else
-                            sunSign = "Aries";
+                        sunSign = day <= 20 ? "Pisces" : "Aries";
                         break;
                     case 4:
-                        if (day <= 20)
-                            sunSign = "Aries";
-                        else
-                            sunSign = "Taurus";
+                        sunSign = day <= 20 ? "Aries" : "Taurus";
                         break;
                     case 5:
-                        if (day <= 21)
-                            sunSign = "Taurus";
-                        else
-                            sunSign = "Gemini";
+                        sunSign = day <= 21 ? "Taurus" : "Gemini";
                         break;
                     case 6:
-                        if (day <= 22)
-                            sunSign = "Gemini";
-                        else
-                            sunSign = "Cancer";
+                        sunSign = day <= 22 ? "Gemini" : "Cancer";
                         break;
                     case 7:
-                        if (day <= 22)
-                            sunSign = "Cancer";
-                        else
-                            sunSign = "Leo";
+                        sunSign = day <= 22 ? "Cancer" : "Leo";
                         break;
                     case 8:
-                        if (day <= 23)
-                            sunSign = "Leo";
-                        else
-                            sunSign = "Virgo";
+                        sunSign = day <= 23 ? "Leo" : "Virgo";
                         break;
                     case 9:
-                        if (day <= 23)
-                            sunSign = "Virgo";
-                        else
-                            sunSign = "Libra";
+                        sunSign = day <= 23 ? "Virgo" : "Libra";
                         break;
                     case 10:
-                        if (day <= 23)
-                            sunSign = "Libra";
-                        else
-                            sunSign = "Scorpio";
+                        sunSign = day <= 23 ? "Libra" : "Scorpio";
                         break;
                     case 11:
-                        if (day <= 22)
-                            sunSign = "Scorpio";
-                        else
-                            sunSign = "Sagittarius";
+                        sunSign = day <= 22 ? "Scorpio" : "Sagittarius";
                         break;
                     case 12:
-                        if (day <= 21)
-                            sunSign = "Sagittarius";
-                        else
-                            sunSign = "Capricorn";
+                        sunSign = day <= 21 ? "Sagittarius" : "Capricorn";
                         break;
                     default:
                         break;
@@ -150,7 +114,7 @@ namespace Lab02.Model
             }
         }
 
-        public string ChineseSign
+        internal string ChineseSign
         {
             get
             {
@@ -165,11 +129,11 @@ namespace Lab02.Model
             }
         }
 
-        public bool IsBirthday
+        internal bool IsBirthday
         {
             get
             {
-                return (DateTime.Now.Day == _birthDate.Day && DateTime.Now.Month == _birthDate.Month);
+                return DateTime.Now.Day == _birthDate.Day && DateTime.Now.Month == _birthDate.Month;
             }
         }
     }

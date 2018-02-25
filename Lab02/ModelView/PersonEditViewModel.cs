@@ -9,18 +9,20 @@ using System.Windows;
 
 namespace Lab02.ModelView
 {
-    class PersonEditViewModel: INotifyPropertyChanged
+    internal class PersonEditViewModel: INotifyPropertyChanged
     {
         private Person _person;
         private string _name;
         private string _surname;
         private string _email;
         private DateTime _birthDate=DateTime.Now;
-        private bool _dateChanged = false;
+        private bool _dateChanged;
         private RelayCommand _proceedCommand;
+
         internal PersonEditViewModel()
         {
         }
+
         public string Name
         {
             get { return _name; }
@@ -73,23 +75,21 @@ namespace Lab02.ModelView
 
         private async void ProceedImpl(object o)
         {
-            
-            await Task.Run((() =>
+            await Task.Run(() =>
             {
-                if (DateTime.Now.Year - _birthDate.Year < 135 && _birthDate < DateTime.Now)
+                if (DateTime.Now.Year - _birthDate.Year >= 135 || _birthDate >= DateTime.Now)
                 {
-                    _person = new Person(_name, _surname, _email, _birthDate);
-                    if (_person.IsBirthday)
-                        MessageBox.Show("Happy Birthday!");
-                    Thread.Sleep(500);
+                    _person = null;
+                    return;
                 }
-            }));
-            if (_person == null)
-                MessageBox.Show("Wrong Date");
-            else
-            {
-                MessageBox.Show($"Name: {_person.Name}{Environment.NewLine}Surname: {_person.Surname}{Environment.NewLine}E-mail: {_person.Email}{Environment.NewLine}Birth Date: {_person.BirthDate.ToShortDateString()}{Environment.NewLine}Is Adult: {_person.IsAdult}{Environment.NewLine}Sun Sign: {_person.SunSign}{Environment.NewLine}Chinese Sign: {_person.ChineseSign}{Environment.NewLine}Is Birthday: {_person.IsBirthday}");
-            }
+                _person = new Person(_name, _surname, _email, _birthDate);
+                if (_person.IsBirthday)
+                    MessageBox.Show("Happy Birthday!");
+                Thread.Sleep(500);
+            });
+            MessageBox.Show(_person == null
+                ? "Wrong Date"
+                : $"Name: {_person.Name}{Environment.NewLine}Surname: {_person.Surname}{Environment.NewLine}E-mail: {_person.Email}{Environment.NewLine}Birth Date: {_person.BirthDate.ToShortDateString()}{Environment.NewLine}Is Adult: {_person.IsAdult}{Environment.NewLine}Sun Sign: {_person.SunSign}{Environment.NewLine}Chinese Sign: {_person.ChineseSign}{Environment.NewLine}Is Birthday: {_person.IsBirthday}");
         }
 
         #region Implementation
